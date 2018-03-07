@@ -1,6 +1,6 @@
 # import Flask
 from flask import Flask, render_template, redirect, jsonify
-from model import session, Awards
+from model import session, Contracts
 
 # initialize flask app
 app = Flask(__name__)
@@ -14,26 +14,33 @@ def index():
 @app.route('/awards')
 def awards():
 
-    # query db for awards
-    gov_awards = session.query(Awards)
-
     # empty array to hold award data
-    awards_array = []
+    contracts_array = []
 
     # place each award in a dict. and add to awards_array
-    for award in gov_awards:
+    for contract in Contracts:
 
-        award_dict = {}
+        contract_dict = {}
 
-        award_dict['awarding_agency'] = award.awarding_agency
-        award_dict['date_signed'] = award.date_signed
-        award_dict['recipient_name'] = award.recipient_name
-        award_dict['recipient_zip'] = award.recipient_zip
-        award_dict['total_obligation'] = award.total_obligation
+        contract_dict['Awarding_Agency'] = contract.Awarding_Agency
+        contract_dict['Subtier_Agency'] = contract.Subtier_Agency
+        contract_dict['Subtier_Code'] = contract.Subtier_Code
+        contract_dict['Category'] = contract.Category
+        contract_dict['POP_City'] = contract.POP_City
+        contract_dict['POP_State'] = contract.POP_State
+        contract_dict['POP_Zip'] = contract.POP_Zip
+        contract_dict['Recipient_Name'] = contract.Recipient_Name
+        contract_dict['Total_Obligation'] = contract.Total_Obligation
+        # contract_dict['Latitude'] = contract.Latitude
+        # contract_dict['Longitude'] = contract.Longitude
 
-        awards_array.append(award_dict)
+        contracts_array.append(contract_dict)
 
-    return jsonify(awards_array)
+    return jsonify(contracts_array)
 
 if __name__ == '__main__':
   app.run(debug=True)
+
+
+
+
