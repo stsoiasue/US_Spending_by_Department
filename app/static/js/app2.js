@@ -66,7 +66,7 @@ anychart.onDocumentReady(function() {
             series.tooltip().format(function(e){
                 return "Recipient: " + e.getData("recipeint") +"\n"+
                 "Dollars Obligated: " + e.getData("amount") +"\n"+
-                "Dscription: " + e.getData("description")
+                "Description: " + e.getData("description")
              });
 
             // sets container id for the chart
