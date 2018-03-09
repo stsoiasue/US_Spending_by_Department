@@ -27,8 +27,8 @@ class Contracts(Base):
     POP_Zip = Column(String(255))
     Recipient_Name = Column(String(255))
     Total_Obligation = Column(String(255))
-    # Latitude = Column(Float)
-    # Longitude = Column(Float)
+    Latitude = Column(Float)
+    Longitude = Column(Float)
 
 # Create a Contracts table within the database
 Base.metadata.create_all(engine)

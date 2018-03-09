@@ -31,8 +31,8 @@ def awards():
         contract_dict['POP_Zip'] = contract.POP_Zip
         contract_dict['Recipient_Name'] = contract.Recipient_Name
         contract_dict['Total_Obligation'] = contract.Total_Obligation
-        # contract_dict['Latitude'] = contract.Latitude
-        # contract_dict['Longitude'] = contract.Longitude
+        contract_dict['Latitude'] = contract.Latitude
+        contract_dict['Longitude'] = contract.Longitude
 
         contracts_array.append(contract_dict)
 
