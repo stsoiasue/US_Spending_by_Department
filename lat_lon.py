@@ -6,7 +6,8 @@ import numpy as np
 import sqlite3
 from uszipcode import ZipcodeSearchEngine
 
-conn = sqlite3.connect('us_data3.sqlite')
+conn = sqlite3.connect('raw_data_no_lat_lon.sqlite')
+
 
 us_data_df = pd.read_sql_query("SELECT * FROM department_contracts", conn)
 
@@ -26,6 +27,10 @@ for index, row in zip_code.iterrows():
     row['Latitude'] = zipcode['Latitude']
     row['Longitude'] = zipcode['Longitude']
 
-conn = sqlite3.connect('final_dataset.sqlite')
+merged_df = us_data_df.merge(zip_code, how='left', on='POP_Zip')
+# merged_df = merged_df[np.isfinite(merged_df['Latitude'])]
 
-zip_code.to_sql("department_contracts", conn, if_exists="replace")
+conn = sqlite3.connect('data.sqlite')
+
+merged_df.to_sql("department_contracts", conn, if_exists="replace")
+merged_df.to_csv('data.csv')
