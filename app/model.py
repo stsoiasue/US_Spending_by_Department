@@ -1,22 +1,40 @@
 # Python SQL toolkit and Object Relational Mapper
-from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String, Float
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine
 import os 
 
-sqlite_db_path = os.path.join('non-static','gov_awards.sqlite')
+# sqlite_db_path = os.path.join('app','non-static','us_data.sqlite')
+sqlite_db_path = os.path.join('non-static','us_data.sqlite')
 
-# Create engine using the `gov_awards.sqlite` database file
+# Create engine using the `us_data.sqlite` database file
 engine = create_engine(f'sqlite:///{sqlite_db_path}')
 
-# Declare a Base using `automap_base()`
-Base = automap_base()
+# Declare a Base using `declarative_base()`
+Base = declarative_base()
 
-# Use the Base class to reflect the database tables
-Base.prepare(engine, reflect=True)
+# establish Contracts class
+class Contracts(Base):
+    __tablename__ = 'department_contracts'
+    index = Column(Integer, primary_key=True)
+    Awarding_Agency = Column(String(255))
+    Subtier_Agency = Column(String(255))
+    Subtier_Code = Column(String(255))
+    Category = Column(String(255))
+    POP_City = Column(String(255))
+    POP_State = Column(String(255))
+    POP_Zip = Column(String(255))
+    Recipient_Name = Column(String(255))
+    Total_Obligation = Column(String(255))
+    # Latitude = Column(Float)
+    # Longitude = Column(Float)
 
-# assign awards table to variable
-Awards = Base.classes.awards
+# Create a Contracts table within the database
+Base.metadata.create_all(engine)
 
-# Create a session
-session = Session(engine)
+# create session object
+session = Session(bind=engine)
+
+# assign table to Contracts variable
+Contracts = session.query(Contracts)
