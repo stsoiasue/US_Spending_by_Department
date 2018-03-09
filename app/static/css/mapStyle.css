@@ -1,10 +1,54 @@
-body {
+.vividworknav {
+    max-width: 100%;
+    height: auto;
+    text-align: center;
     padding: 0;
-    margin: 0;
+    float: left;
+    padding: 0;
+    position: relative;
+    background-color: black;
 }
-  
-#map,
-body,
-html {
-    height: 100%;
+
+.vividworknav:hover img {
+    opacity: 0.3;
+}
+
+.vividworknav:hover .text-content {
+    opacity: 1;
+}
+
+.vividworknav img {
+    padding: 10px;
+    width: 100%;
+    display: block;
+    opacity: 1;
+    background-color: white;
+}
+
+.vividworknav img,
+.text-content {
+    -webkit-transition: opacity 0.5s ease-out;
+    -moz-transition: opacity 0.5s ease-out;
+    -o-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out;
+}
+
+.text-content {
+    position: absolute;
+    color: white;
+    left: 0;
+    top: 45%;
+    right: 0;
+    bottom: 0;
+    font-size: 24px;
+    text-align: center;
+    opacity: 0;
+    font-family: Oxygen;
+}
+
+html, body, #container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }

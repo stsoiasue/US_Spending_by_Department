@@ -8,6 +8,7 @@ var myMap = L.map('map', {
 L.tileLayer(mapbox).addTo(myMap);
 
 var url = "https://data.sfgov.org/resource/gxxq-x39z.json?$limit=1000";
+// var url = "/awards";
 
 // EXAMPLE ARRAY OF DICTIONARIES TO PULL FROM FLASK APP:
 // [ {
@@ -30,20 +31,29 @@ var url = "https://data.sfgov.org/resource/gxxq-x39z.json?$limit=1000";
 //     "resolution" : "NONE"
 
 // SUBJECT ITEMS:
-// awards = (session.query(Awards).limit(5))
-// for award in awards:
-//     print(award.total_obligation)
-//     print(award.awarding_agency)
-//     print(award.recipient_name)
-//     print(award.recipient_zip)
-//     print(award.date_signed)
+// awards_array = []
+//     # place each award in a dict. and add to awards_array
+//     for award in gov_awards:
 
-// 500.0
-// Department of Agriculture
-// FIRST SERVICE APPRAISAL INC
-// 57201
-// 2017-08-23
-// 9048.0
+//         award_dict = {}
+
+//         award_dict['awarding_agency'] = award.awarding_agency
+//         award_dict['date_signed'] = award.date_signed
+//         award_dict['recipient_name'] = award.recipient_name
+//         award_dict['recipient_zip'] = award.recipient_zip
+//         award_dict['total_obligation'] = award.total_obligation
+
+//     Awarding_Agency 
+//     Subtier_Agency
+//     Subtier_Code
+//     Category
+//     POP_City
+//     POP_State
+//     POP_Zip
+//     Recipient_Name
+//     Total_Obligation
+//     Latitude
+//     Longitude
 
 
 d3.json(url, function(response){

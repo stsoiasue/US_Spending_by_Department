@@ -9,3 +9,22 @@ var myMap = L.map("map", {
 
 // Adding tile layer to the map
 L.tileLayer(mapbox).addTo(myMap);
+
+var awardsURL = '/awards';
+
+d3.json(awardsURL, function(error, awards) {
+    if (error) {
+        console.warn(error);
+    };
+
+    var coord_dict = {};
+
+    for (i=0; i<awards.length; i++) {
+
+        if (awards.POP_Zip in coord_dict) {
+            coord_dict[awards.POP_Zip] = coord_dict[awards.POP_Zip] + awards.Total_Obligation
+        }
+
+    }
+
+})
