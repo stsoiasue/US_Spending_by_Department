@@ -38,6 +38,10 @@ def awards():
 
     return jsonify(contracts_array)
 
+@app.route('/top10')
+def top10():
+    return render_template('anyMapChart.html')
+
 if __name__ == '__main__':
   app.run(debug=True)
 
