@@ -29,6 +29,28 @@ class Contracts(Base):
     Total_Obligation = Column(String(255))
     Latitude = Column(Float)
     Longitude = Column(Float)
+    # Description = Column(String(255))
+    # Contract_ID = Column(String(255))
+
+# establish Contracts class
+class Top(Base):
+    __tablename__ = 'top_contracts'
+    index = Column(Integer, primary_key=True)
+    Awarding_Agency = Column(String(255))
+    Subtier_Agency = Column(String(255))
+    Subtier_Code = Column(String(255))
+    Category = Column(String(255))
+    POP_City = Column(String(255))
+    POP_State = Column(String(255))
+    POP_Zip = Column(String(255))
+    Recipient_Name = Column(String(255))
+    Total_Obligation = Column(String(255))
+    Latitude = Column(Float)
+    Longitude = Column(Float)
+    # Description = Column(String(255))
+    # Contract_ID = Column(String(255))
+    # Percentage_of_Dept = Column(Integer)
+    # Percentage_of_Total = Column(Integer)
 
 # Create a Contracts table within the database
 Base.metadata.create_all(engine)
@@ -38,3 +60,6 @@ session = Session(bind=engine)
 
 # assign table to Contracts variable
 Contracts = session.query(Contracts)
+
+# assign table to Contracts variable
+Top = session.query(Contracts).limit(20)
