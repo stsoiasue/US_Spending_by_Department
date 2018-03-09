@@ -1,6 +1,6 @@
 # import Flask
 from flask import Flask, render_template, redirect, jsonify
-from model import session, Contracts, Top
+from model import session, Contracts, Top_Contracts
 
 # initialize flask app
 app = Flask(__name__)
@@ -33,8 +33,8 @@ def awards():
         contract_dict['Total_Obligation'] = contract.Total_Obligation
         contract_dict['Latitude'] = contract.Latitude
         contract_dict['Longitude'] = contract.Longitude
-        # contract_dict['Description'] = contract.Longitude
-        # contract_dict['Contract_ID'] = contract.Longitude
+        contract_dict['Description'] = contract.Description
+        contract_dict['Contract_ID'] = contract.Contract_ID
 
         contracts_array.append(contract_dict)
 
@@ -48,7 +48,7 @@ def top_awards():
     top_contracts_array = []
 
     # place each award in a dict. and add to awards_array
-    for top_contract in Top:
+    for top_contract in Top_Contracts:
 
         contract_dict = {}
 
@@ -63,8 +63,8 @@ def top_awards():
         contract_dict['Total_Obligation'] = top_contract.Total_Obligation
         contract_dict['Latitude'] = top_contract.Latitude
         contract_dict['Longitude'] = top_contract.Longitude
-        # contract_dict['Description'] = top_contract.Description
-        # contract_dict['Contract_ID'] = top_contract.Contract_ID
+        contract_dict['Description'] = top_contract.Description
+        contract_dict['Contract_ID'] = top_contract.Contract_ID
         # contract_dict['Percentage_of_Dept'] = top_contract.Percentage_of_Dept
         # contract_dict['Percentage_of_Total'] = top_contract.Percentage_of_Total
 
