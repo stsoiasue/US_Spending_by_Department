@@ -11,20 +11,48 @@ anychart.onDocumentReady(function() {
 
         console.log(contracts);
         
+        var totalSpend = 0, departmentSpend = {};
+
         var data = [];
+        
+        for (i=0; i<contracts.length; i++) {
+
+            agency = contracts[i].Awarding_Agency
+            spend = +contracts[i].Total_Obligation
+        
+            if (agency in departmentSpend) {
+            
+                departmentSpend[agency] = departmentSpend[agency] + spend;
+            
+            } else {
+            
+                departmentSpend[agency] = spend;
+            
+            };
+            
+            totalSpend = totalSpend + spend;
+        
+        };
 
         for (j=0; j<contracts.length; j++) {
             
+            agency = contracts[j].Awarding_Agency
+
+            depPercent = Math.round((+contracts[j].Total_Obligation / departmentSpend[agency]) * 100)
+
+            totalPercent = Math.round((+contracts[j].Total_Obligation / totalSpend) * 100)
+
             contractDict = {
-                lat: contracts.Latitude,
-                long: contracts.Longitude,
-                name: contracts.Awarding_Agency,
-                recipient: contracts.Recipient_Name,
-                amount: +contracts.Total_Obligation,
-                // description: contracts.Description,
-                // depShare: contracts.Percentage_of_Dept,
-                // totalShare: contracts.Percentage_of_Total
-                zipCode: contracts.POP_Zip
+                lat: contracts[j].Latitude,
+                long: contracts[j].Longitude,
+                name: contracts[j].Awarding_Agency,
+                recipient: contracts[j].Recipient_Name,
+                amount: +contracts[j].Total_Obligation,
+                description: contracts[j].Description,
+                depShare: depPercent,
+                totalShare: totalPercent,
+                zipCode: contracts[j].POP_Zip,
+                category: contracts[j].Category
             };
             console.log(contractDict)
             
