@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 import os 
 
 # sqlite_db_path = os.path.join('app','non-static','us_data.sqlite')
-sqlite_db_path = os.path.join('non-static','us_data.sqlite')
+sqlite_db_path = os.path.join('non-static','end_of_class.sqlite')
 
 # Create engine using the `us_data.sqlite` database file
 engine = create_engine(f'sqlite:///{sqlite_db_path}')
