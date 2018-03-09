@@ -62,4 +62,4 @@ session = Session(bind=engine)
 Contracts = session.query(Contracts)
 
 # assign table to Contracts variable
-Top = session.query(Contracts).limit(20)
+# Top = session.query(Contracts).limit(20)
