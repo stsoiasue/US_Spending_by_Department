@@ -8,7 +8,7 @@ app = Flask(__name__)
 # retun homepage
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index2.html')
 
 # return list of awards names
 @app.route('/awards')
@@ -79,6 +79,10 @@ def top10():
 @app.route('/heatmap')
 def heatmap():
     return render_template('heatmap.html')
+
+@app.route('/spending_data')
+def spending_data():
+    return render_template('spending_data.html')
 
 if __name__ == '__main__':
   app.run(debug=True)

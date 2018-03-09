@@ -1,58 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>USA Spending</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <!-- jQuery CDN -->
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  
-  <!-- Bootstrap CDN -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-</head>
-<body>
-	<nav class="navbar">
-	  <div class="container-fluid">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-		  <span class="sr-only">Toggle navigation</span>
-		  <span class="icon-bar"></span>
-		  <span class="icon-bar"></span>
-		  <span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="index.html"><font color="#FC0505" size="10">USA Spending</font></a>
-		</div>
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		  <ul class="nav navbar-nav navbar-right">
-			<li class="nav-item dropdown">
-			  <a href="index.html" class="nav-link dropdown-toggle" data-toggle="dropdown" id="Preview" role="button" aria-haspopup="true" aria-expanded="false">
-				  <font color="#1F1E1E">Spending Views</font> <span class="caret"></span></a>
-			  <ul class="dropdown-menu">
-				  <li><a class="dropdown-item" href="byState.html">Top Ten Contracts By Department</a></li>
-				  <li><a class="dropdown-item" href="byAgency.html">By Agency/Dept</a></li>
-				  <li><a class="dropdown-item" href="byCategory.html">By Category</a></li>
-			  </ul>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="spending_data.html"><font color="#1F1E1E">Data</font></a>
-			</li>
-		  </ul>
-		</div>
-	  </div>
-	</nav>
-
+{% extends "layout.html" %}
+{% block content %}
 	<div class="container">
 			<div class="row">
 				<div class="col-md-6">
 					<div class="row">
 						<div class="col-md-12 index_div module">
 							<div class="vividworknav"> 
-								<a href="byState.html">
-								<img src="inspiration_1.jpg" class= "index_img" height="400" width="500" alt="Spending by State"/>
+								<a href="/heatmap">
+								<img src="../static/Images/inspiration_1.jpg" class= "index_img" height="400" width="500" alt="Spending by State"/>
 								</a>
 								<div class="text-content">
 									<p>USA Spending by State</p>
@@ -66,8 +21,8 @@
 					<div class="row">
 						<div class="col-md-12 index_div module">
 							<div class="vividworknav">
-								<a href="byAgency.html">
-								<img src="screen_shot_2018-03-08_at_6.34.39_pm_960.png" class= "index_img" height="400" width="500" alt="Spending by Agency"/>
+								<a href="/top10">
+								<img src="../static/Images/screen_shot_2018-03-08_at_6.34.39_pm_960.png" class= "index_img" height="400" width="500" alt="Spending by Agency"/>
 								</a>
 								<div class="text-content">
 									<p>USA Spending by Department</p>
@@ -79,5 +34,4 @@
 			</div>
 			<br/>
 		</div>
-</body>
-</html>
+{% endblock %}
