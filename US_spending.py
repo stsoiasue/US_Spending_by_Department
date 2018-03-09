@@ -4,6 +4,7 @@ import pandas as pd
 import numpy as np
 
 import sqlite3
+# from uszipcode import ZipcodeSearchEngine
 
 page = 1
 url = 'https://api.usaspending.gov/api/v1/awards/?limit=500&page=' + str(page)
@@ -51,6 +52,8 @@ us_dict['POP_State'] = []
 us_dict['POP_Zip'] = []
 us_dict['Recipient_Name'] = []
 us_dict['Total_Obligation'] = []
+us_dict['Description'] = []
+us_dict['Contract_ID'] = []
 
 next_page = us_data['page_metadata']['has_next_page']
 print(next_page)
@@ -94,10 +97,18 @@ while next_page:
             us_dict['Total_Obligation'].append(contract['total_obligation'])
         except:
             us_dict['Total_Obligation'].append(np.nan)
+        try:
+            us_dict['Description'].append(contract['latest_transaction']['assistance_data']['cfda_objectives'])
+        except:
+            us_dict['Description'].append(np.nan)
+        try:
+            us_dict['Contract_ID'].append(contract['id'])
+        except:
+            us_dict['Contract_ID'].append(np.nan)
     page += 1
     url = 'https://api.usaspending.gov/api/v1/awards/?limit=500&page=' + str(page)
     print(us_data['page_metadata']['page'])
-    print(contract['awarding_agency']['toptier_agency']['name'])
+    # print(contract['awarding_agency']['toptier_agency']['name'])
     us_data = requests.get(url , json =params).json()
     next_page = us_data['page_metadata']['has_next_page']
         
@@ -140,11 +151,42 @@ for contract in us_data['results']:
         us_dict['Total_Obligation'].append(contract['total_obligation'])
     except:
         us_dict['Total_Obligation'].append(np.nan)
-
+    try:
+        us_dict['Description'].append(contract['latest_transaction']['assistance_data']['cfda_objectives'])
+    except:
+        us_dict['Description'].append(np.nan)
+    try:
+        us_dict['Contract_ID'].append(contract['id'])
+    except:
+        us_dict['Contract_ID'].append(np.nan)
 
 
 us_data_df = pd.DataFrame(us_dict)
 
-conn = sqlite3.connect('us_data3.sqlite')
+# us_data_df['Latitude'] = ''
+# us_data_df['Longitude'] = ''
+
+# search = ZipcodeSearchEngine()
+
+# for index, row in us_data_df.iterrows():    
+#     zipcode = search.by_zipcode(row['POP_Zip'])
+#     zip_lat = zipcode['Latitude']
+#     zip_lon = zipcode['Longitude']
+    
+#     if zip_lat == None:
+#         res = search.by_city(row['POP_City'])
+#         try:
+#             row['Latitude']= res[0]['Latitude']
+#         except:
+#             row['Latitude']= None
+#         try:
+#             row['Longitude']= res[0]['Longitude']
+#         except:
+#             row['Longitude']= None
+#     else:       
+#         row['Latitude'] = zip_lat
+#         row['Longitude'] = zip_lon
+
+conn = sqlite3.connect('raw_data_no_lat_lon.sqlite')
 
 us_data_df.to_sql("department_contracts", conn, if_exists="replace")
