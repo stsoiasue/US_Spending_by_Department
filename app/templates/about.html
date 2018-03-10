@@ -5,6 +5,14 @@
     <div class="row">
         <div class="col-md-12">
             <h1>Data Collection</h1>
+            <p>Using the US Spending API we made calls to gather the 2017 US Spending contracts for the agencies below: </p>
+            <ul>
+                <li>Department of Transportation</li>
+                <li>Department of Agriculture</li>
+                <li>Department of the Interior</li>
+            </ul>  
+            <p>The required data was stored in a pandas data frame and cleaned before saving as an sqlite file.</p>
+            <p>Our Flask API was built with enpoints that queried the database.</p>
         </div>
     </div> 
 
@@ -20,21 +28,32 @@
         </div>
     </div>
 
+    <hr>
+
     <div class="row">
         <div class="col-md-12">
             <h1>Heat Map</h1>
+            <p>We created a heatmap using Leaflet.js which referenced one of our Flask API's endpoints.</p> 
+            <p>The map shows the spend over the US with intensity proportional to the Total dollars obligated in each contract.</p>
+        </div>
         </div>
     </div> 
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
             <img src="../static/Images/heatmap_1.png" class= "index_img" height="400" width="500" alt="code_snip"/>
         </div>
+        <div class="col-md-4"></div>
     </div>
+
+    <hr>
 
     <div class="row">
         <div class="col-md-12">
             <h1>AnyChart Dashboard</h1>
+            <p>Using the AnyChart Javascript Library we created a dashboard which called another endpoint from our API to obtain the top 10 contracts (based on dollar amount) for each agency.</p>
+            <p>The dashboard shows a map with points relative to the place of performace and shows the contract's proportions of department spend and total spend when the user clicks a given point.</p>
         </div>
     </div> 
 
@@ -43,7 +62,7 @@
             <img src="../static/Images/anychart_map_1.png" class= "index_img" height="400" width="500" alt="code_snip"/>
         </div>
         <div class="col-md-4">
-            <img src="../static/Images/anychart_map_2.png" class= "index_img" height="400" width="500" alt="code_snip"/>
+            <img src="../static/Images/any_chart_map_2.png" class= "index_img" height="400" width="500" alt="code_snip"/>
         </div>
         <div class="col-md-4">
             <img src="../static/Images/anychart_map_3.png" class= "index_img" height="400" width="500" alt="code_snip"/>
