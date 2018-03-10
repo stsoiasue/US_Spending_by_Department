@@ -2,7 +2,7 @@ var mapbox = 'https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}
 
 var myMap = L.map('map', {
     center: [39.25, -99.75],
-    zoom: 6
+    zoom: 5
 });
 
 L.tileLayer(mapbox).addTo(myMap);
