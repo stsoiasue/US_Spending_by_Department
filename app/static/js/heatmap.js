@@ -11,7 +11,8 @@ var dark = L.tileLayer(
 
 var myMap = L.map('map', {
     center: [39.25, -99.75],
-    zoom: 5
+    zoom: 5,
+    layers: [light]
 });
 
 var url = "/awards";
