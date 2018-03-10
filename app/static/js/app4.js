@@ -1,15 +1,12 @@
 anychart.onDocumentReady(function() {
     anychart.theme('darkBlue')
 
-    // var url = 'https://api.usaspending.gov/api/v1/awards/?limit=10&page=1';
     var url = '/top_awards';
 
     d3.json(url, function(error, contracts) {
         if (error) {
             console.warn(error)
         };
-
-        console.log(contracts);
         
         var totalSpend = 0, departmentSpend = {};
 
@@ -18,7 +15,7 @@ anychart.onDocumentReady(function() {
         for (i=0; i<contracts.length; i++) {
 
             agency = contracts[i].Awarding_Agency
-            spend = +contracts[i].Total_Obligation
+            spend = Math.round(+contracts[i].Total_Obligation)
         
             if (agency in departmentSpend) {
             
@@ -52,9 +49,10 @@ anychart.onDocumentReady(function() {
                 depShare: depPercent,
                 totalShare: totalPercent,
                 zipCode: contracts[j].POP_Zip,
-                category: contracts[j].Category
+                category: contracts[j].Category,
+                deptTotal: departmentSpend[agency],
+                total: totalSpend
             };
-            console.log(contractDict)
             
             data.push(contractDict);
 
@@ -72,15 +70,15 @@ anychart.onDocumentReady(function() {
                 .enabled(true)
                 .useHtml(true)
                 .padding([0, 0, 10, 0])
-                .text('Top 10 Government Contracts<br/><span style="color:#929292; font-size: 12px;">' +
-                'Department of Transportation, Department of Interior, Department of Agriculture</span>');
+                .text('Top 10 Government Contracts for:<br/><span style="color:#929292; font-size: 12px;">' +
+                'Department of Transportation, Department of the Interior, Department of Agriculture</span>');
 
             // sets marker series
             var series = map.marker(data);
 
             series.tooltip().format(function(e){
                 return "Recipient: " + e.getData("recipient") +"\n"+
-                "Dollars Obligated: " + e.getData("amount")
+                "Dollars Obligated: $" + e.getData("amount")
              });
 
             // sets container id for the chart
@@ -132,10 +130,10 @@ anychart.onDocumentReady(function() {
         function changeContents(index) {
             totalShareChart.data([data[index].totalShare, 100]);
             totalShareChart.label().text(data[index].totalShare + '%');
-            totalShareChart.title().text('Percentage of Total Contracts<br/><span style="color: #212121; text-decoration: underline">' + data[index].amount + '</span>');
+            totalShareChart.title().text('Percentage of Total Contracts (Total: $' + data[index].total + ')<br/><span style="color: #212121; text-decoration: underline">Contract Amount: $' + data[index].amount + '</span>');
             departmentShareChart.data([data[index].depShare, 100]);
             departmentShareChart.label().text(data[index].depShare + '%');
-            departmentShareChart.title().text('Percentage of Department Contracts<br/><span style="color: #212121; text-decoration: underline">Department: ' + data[index].name + '</span>');
+            departmentShareChart.title().text('Percentage of Department Contracts (Total: $' + data[index].deptTotal + ')<br/><span style="color: #212121; text-decoration: underline">' + data[index].name + '</span>');
         };
 
         var mapChart = drawMapChart();
