@@ -9,17 +9,9 @@ var dark = L.tileLayer(
     "T6YbdDixkOBWH_k9GbS8JQ"
 );
 
-<<<<<<< HEAD
-// Create map object and set default layers
-var myMap = L.map("map", {
-    center: [41,-99.75],
-    zoom: 4,
-    layers: [light]
-=======
 var myMap = L.map('map', {
     center: [39.25, -99.75],
     zoom: 5
->>>>>>> 2429c702b3861443d1ec7de91300c35fc9098654
 });
 
 var url = "/awards";
