@@ -1,1193 +1,1147 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>USA Spending</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <!-- jQuery CDN -->
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  
-  <!-- Bootstrap CDN -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-</head>
-<body>
-	<nav class="navbar">
-	  <div class="container-fluid">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-		  <span class="sr-only">Toggle navigation</span>
-		  <span class="icon-bar"></span>
-		  <span class="icon-bar"></span>
-		  <span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="index.html"><font color="#FC0505" size="10">USA Spending</font></a>
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<p><b>Data Sample</b> (limited to 100 rows)</p>
+			<a href="/spending_data"></a>
+			<table class="table table-bordered table-hover table-condensed">
+				<thead bgcolor="#C0C0C0"><tr><th title="Field #1"></th>
+				<th title="Field #2">Awarding_Agency</th>
+				<th title="Field #3">Category</th>
+				<th title="Field #4">POP_City</th>
+				<th title="Field #5">POP_State</th>
+				<th title="Field #6">POP_Zip</th>
+				<th title="Field #7">Recipient_Name</th>
+				<th title="Field #8">Subtier_Agency</th>
+				<th title="Field #9">Subtier_Code</th>
+				<th title="Field #10">Total_Obligation</th>
+				<th title="Field #11">Latitude</th>
+				<th title="Field #12">Longitude</th>
+				</tr></thead>
+				<tbody><tr>
+				<td align="right">1</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>BALTIMORE</td>
+				<td>MARYLAND</td>
+				<td align="right">21230</td>
+				<td>MARYLAND MARITIME INC</td>
+				<td>Maritime Administration</td>
+				<td align="right">6938</td>
+				<td align="right">520169</td>
+				<td align="right">39.2635174</td>
+				<td align="right">-76.6239423</td>
+				</tr>
+				<tr>
+				<td align="right">2</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>BALTIMORE</td>
+				<td>MARYLAND</td>
+				<td align="right">21230</td>
+				<td>MARYLAND MARITIME INC</td>
+				<td>Maritime Administration</td>
+				<td align="right">6938</td>
+				<td align="right">662420</td>
+				<td align="right">39.2635174</td>
+				<td align="right">-76.6239423</td>
+				</tr>
+				<tr>
+				<td align="right">3</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>ORLANDO</td>
+				<td>FLORIDA</td>
+				<td align="right">32822</td>
+				<td>SIMCOM INTERNATIONAL, INC.</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">39520</td>
+				<td align="right">28.4750405</td>
+				<td align="right">-81.2849169</td>
+				</tr>
+				<tr>
+				<td align="right">4</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>MOJAVE</td>
+				<td>CALIFORNIA</td>
+				<td align="right">93501</td>
+				<td>NATIONAL TEST PILOT SCHOOL INC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">29950</td>
+				<td align="right">35.04403</td>
+				<td align="right">-118.2526623</td>
+				</tr>
+				<tr>
+				<td align="right">5</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>FLUSHING</td>
+				<td>NEW YORK</td>
+				<td align="right">11371</td>
+				<td>FLIGHTSAFETY INTERNATIONAL INC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">59200</td>
+				<td align="right">40.7766392</td>
+				<td align="right">-73.87425</td>
+				</tr>
+				<tr>
+				<td align="right">7</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>SAINT PETERSBURG</td>
+				<td>FLORIDA</td>
+				<td align="right">33710</td>
+				<td>SENSOR SYSTEMS, L.L.C.</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">211847</td>
+				<td align="right">27.791959</td>
+				<td align="right">-82.723924</td>
+				</tr>
+				<tr>
+				<td align="right">8</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>OKLAHOMA CITY</td>
+				<td>OKLAHOMA</td>
+				<td align="right">73169</td>
+				<td>ONESIMUS DEFENSE LLC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">13989</td>
+				<td align="right">35.378708</td>
+				<td align="right">-97.6439611</td>
+				</tr>
+				<tr>
+				<td align="right">10</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>TUSTIN</td>
+				<td>CALIFORNIA</td>
+				<td align="right">92780</td>
+				<td>PVP ADVANCED EO SYSTEMS, INC.</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">106500</td>
+				<td align="right">33.7372177</td>
+				<td align="right">-117.8135579</td>
+				</tr>
+				<tr>
+				<td align="right">11</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>OKLAHOMA CITY</td>
+				<td>OKLAHOMA</td>
+				<td align="right">73169</td>
+				<td>RIGIL CORPORATION</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">605377.86</td>
+				<td align="right">35.378708</td>
+				<td align="right">-97.6439611</td>
+				</tr>
+				<tr>
+				<td align="right">12</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>COLORADO SPRINGS</td>
+				<td>COLORADO</td>
+				<td align="right">80916</td>
+				<td>RAMPART AVIATION, LLC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">15830</td>
+				<td align="right">38.8021891</td>
+				<td align="right">-104.7229279</td>
+				</tr>
+				<tr>
+				<td align="right">13</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>FLUSHING</td>
+				<td>NEW YORK</td>
+				<td align="right">11371</td>
+				<td>FLIGHTSAFETY INTERNATIONAL INC.</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">196080</td>
+				<td align="right">40.7766392</td>
+				<td align="right">-73.87425</td>
+				</tr>
+				<tr>
+				<td align="right">14</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>PRESCOTT</td>
+				<td>ARIZONA</td>
+				<td align="right">86301</td>
+				<td>GUIDANCE ACADEMY, LLC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">13675.12</td>
+				<td align="right">34.5659245</td>
+				<td align="right">-112.4649083</td>
+				</tr>
+				<tr>
+				<td align="right">15</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>OKLAHOMA CITY</td>
+				<td>OKLAHOMA</td>
+				<td align="right">73169</td>
+				<td>MA TECH SERVICES INC.</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">68160</td>
+				<td align="right">35.378708</td>
+				<td align="right">-97.6439611</td>
+				</tr>
+				<tr>
+				<td align="right">16</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>NORMAN</td>
+				<td>OKLAHOMA</td>
+				<td align="right">73071</td>
+				<td>CNI GLOBAL SOLUTIONS, LLC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">2673732.36</td>
+				<td align="right">35.2407401</td>
+				<td align="right">-97.4056928</td>
+				</tr>
+				<tr>
+				<td align="right">17</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>OKLAHOMA CITY</td>
+				<td>OKLAHOMA</td>
+				<td align="right">73169</td>
+				<td>ATLANTIC FABRICATION AND DESIGN, LLC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">0</td>
+				<td align="right">35.378708</td>
+				<td align="right">-97.6439611</td>
+				</tr>
+				<tr>
+				<td align="right">18</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>OKLAHOMA CITY</td>
+				<td>OKLAHOMA</td>
+				<td align="right">73169</td>
+				<td>METROPOLITAN AIR CONDITIONING SERVICE CO (INC)</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">477978</td>
+				<td align="right">35.378708</td>
+				<td align="right">-97.6439611</td>
+				</tr>
+				<tr>
+				<td align="right">19</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>NICHOLS HILLS</td>
+				<td>OKLAHOMA</td>
+				<td align="right">73116</td>
+				<td>DISCOVERSOFT DEVELOPMENT, LLC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">68000</td>
+				<td align="right">35.5424793</td>
+				<td align="right">-97.5518056</td>
+				</tr>
+				<tr>
+				<td align="right">20</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>FLUSHING</td>
+				<td>NEW YORK</td>
+				<td align="right">11371</td>
+				<td>FLIGHTSAFETY INTERNATIONAL INC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">37000</td>
+				<td align="right">40.7766392</td>
+				<td align="right">-73.87425</td>
+				</tr>
+				<tr>
+				<td align="right">21</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>OKLAHOMA CITY</td>
+				<td>OKLAHOMA</td>
+				<td align="right">73104</td>
+				<td>OKLAHOMA MEDICAL RESEARCH FOUNDATION</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">3672</td>
+				<td align="right">35.4718556</td>
+				<td align="right">-97.5057737</td>
+				</tr>
+				<tr>
+				<td align="right">22</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>OKLAHOMA CITY</td>
+				<td>OKLAHOMA</td>
+				<td align="right">73169</td>
+				<td>SOUTHWEST SOLUTIONS GROUP, INC.</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">4527.95</td>
+				<td align="right">35.378708</td>
+				<td align="right">-97.6439611</td>
+				</tr>
+				<tr>
+				<td align="right">23</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>OKLAHOMA CITY</td>
+				<td>OKLAHOMA</td>
+				<td align="right">73169</td>
+				<td>DALE ROGERS TRAINING CENTER, INC.</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">1704732.69</td>
+				<td align="right">35.378708</td>
+				<td align="right">-97.6439611</td>
+				</tr>
+				<tr>
+				<td align="right">24</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>BOISE</td>
+				<td>IDAHO</td>
+				<td align="right">83705</td>
+				<td>AVIATION SPECIALTIES UNLIMITED, INC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">12770</td>
+				<td align="right">43.5698551</td>
+				<td align="right">-116.2249298</td>
+				</tr>
+				<tr>
+				<td align="right">25</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>THE COLONY</td>
+				<td>TEXAS</td>
+				<td align="right">75056</td>
+				<td>SOUTHWEST SOLUTIONS GROUP, INC.</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">5630.01</td>
+				<td align="right">33.0787106</td>
+				<td align="right">-96.9101806</td>
+				</tr>
+				<tr>
+				<td align="right">26</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>LOUISVILLE</td>
+				<td>COLORADO</td>
+				<td align="right">80027</td>
+				<td>VAISALA INC.</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">612708</td>
+				<td align="right">39.9434473</td>
+				<td align="right">-105.1843801</td>
+				</tr>
+				<tr>
+				<td align="right">27</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>FLUSHING</td>
+				<td>NEW YORK</td>
+				<td align="right">11371</td>
+				<td>FLIGHTSAFETY INTERNATIONAL INC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">15222</td>
+				<td align="right">40.7766392</td>
+				<td align="right">-73.87425</td>
+				</tr>
+				<tr>
+				<td align="right">28</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>OVERLAND PARK</td>
+				<td>KANSAS</td>
+				<td align="right">66214</td>
+				<td>SELEX ES INC.</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">77471.16</td>
+				<td align="right">38.9709751</td>
+				<td align="right">-94.7122337</td>
+				</tr>
+				<tr>
+				<td align="right">29</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>OKLAHOMA CITY</td>
+				<td>OKLAHOMA</td>
+				<td align="right">73169</td>
+				<td>IMMUNALYSIS CORP</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">12300</td>
+				<td align="right">35.378708</td>
+				<td align="right">-97.6439611</td>
+				</tr>
+				<tr>
+				<td align="right">30</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>HURRICANE</td>
+				<td>UTAH</td>
+				<td align="right">84737</td>
+				<td>DB SYSTEMS, INC.</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">165117.6</td>
+				<td align="right">37.088313</td>
+				<td align="right">-113.2394452</td>
+				</tr>
+				<tr>
+				<td align="right">31</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>OKLAHOMA CITY</td>
+				<td>OKLAHOMA</td>
+				<td align="right">73169</td>
+				<td>ABBOTT LABORATORIES</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">16089</td>
+				<td align="right">35.378708</td>
+				<td align="right">-97.6439611</td>
+				</tr>
+				<tr>
+				<td align="right">32</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>RANCHO CUCAMONGA</td>
+				<td>CALIFORNIA</td>
+				<td align="right">91730</td>
+				<td>GENERAL MICRO SYSTEMS, INC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">353403</td>
+				<td align="right">34.0965313</td>
+				<td align="right">-117.5848025</td>
+				</tr>
+				<tr>
+				<td align="right">33</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>ORCHARD PARK</td>
+				<td>NEW YORK</td>
+				<td align="right">14127</td>
+				<td>ACCIPITER RADAR CORPORATION</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">68400</td>
+				<td align="right">42.7576584</td>
+				<td align="right">-78.7702895</td>
+				</tr>
+				<tr>
+				<td align="right">34</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>CARSON</td>
+				<td>CALIFORNIA</td>
+				<td align="right">90745</td>
+				<td>DUCOMMUN LABARGE TECHNOLOGIES, INC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">275300.69</td>
+				<td align="right">33.8232001</td>
+				<td align="right">-118.2585096</td>
+				</tr>
+				<tr>
+				<td align="right">35</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>FARMINGDALE</td>
+				<td>NEW YORK</td>
+				<td align="right">11735</td>
+				<td>TELEPHONICS CORPORATION</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">72102.72</td>
+				<td align="right">40.7245083</td>
+				<td align="right">-73.4298073</td>
+				</tr>
+				<tr>
+				<td align="right">36</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>PALO ALTO</td>
+				<td>CALIFORNIA</td>
+				<td align="right">94304</td>
+				<td>COMMUNICATIONS &amp; POWER INDUSTRIES LLC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">506999</td>
+				<td align="right">37.3813444</td>
+				<td align="right">-122.1802812</td>
+				</tr>
+				<tr>
+				<td align="right">37</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>OKLAHOMA CITY</td>
+				<td>OKLAHOMA</td>
+				<td align="right">73108</td>
+				<td>SURFACE MOUNT DEPOT, INC.</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">361175</td>
+				<td align="right">35.4495749</td>
+				<td align="right">-97.5572231</td>
+				</tr>
+				<tr>
+				<td align="right">39</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>GWINN</td>
+				<td>MICHIGAN</td>
+				<td align="right">49841</td>
+				<td>CMP COMMERCIAL CONSTRUCTION, INC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">221339.54</td>
+				<td align="right">46.2195586</td>
+				<td align="right">-87.4714881</td>
+				</tr>
+				<tr>
+				<td align="right">40</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>KINGSVILLE</td>
+				<td>TEXAS</td>
+				<td align="right">78363</td>
+				<td>CMP COMMERCIAL CONSTRUCTION, INC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">142837</td>
+				<td align="right">27.4456818</td>
+				<td align="right">-97.8503951</td>
+				</tr>
+				<tr>
+				<td align="right">42</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>GWINN</td>
+				<td>MICHIGAN</td>
+				<td align="right">49841</td>
+				<td>SWAGER COMMUNICATIONS, INC.</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">569200</td>
+				<td align="right">46.2195586</td>
+				<td align="right">-87.4714881</td>
+				</tr>
+				<tr>
+				<td align="right">43</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>LINCOLN</td>
+				<td>NEBRASKA</td>
+				<td align="right">68524</td>
+				<td>VAZQUEZ COMMERCIAL CONTRACTING, LLC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">20225</td>
+				<td align="right">40.8692304</td>
+				<td align="right">-96.8029489</td>
+				</tr>
+				<tr>
+				<td align="right">47</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>LEESBURG</td>
+				<td>VIRGINIA</td>
+				<td align="right">20175</td>
+				<td>AV ED FLIGHT SCHOOL INC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">121180</td>
+				<td align="right">39.0488574</td>
+				<td align="right">-77.5848665</td>
+				</tr>
+				<tr>
+				<td align="right">48</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>HERNDON</td>
+				<td>VIRGINIA</td>
+				<td align="right">20171</td>
+				<td>KARSUN SOLUTIONS LLC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">1462639.4</td>
+				<td align="right">38.9146972</td>
+				<td align="right">-77.3898602</td>
+				</tr>
+				<tr>
+				<td align="right">49</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>WINDSOR</td>
+				<td>CONNECTICUT</td>
+				<td align="right">6095</td>
+				<td>TRC ENVIRONMENTAL CORPORATION</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">37549.68</td>
+				<td align="right">41.8785329</td>
+				<td align="right">-72.6742455</td>
+				</tr>
+				<tr>
+				<td align="right">51</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>MCLEAN</td>
+				<td>VIRGINIA</td>
+				<td align="right">22102</td>
+				<td>RIVA SOLUTIONS, INC.</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">137989.82</td>
+				<td align="right">38.9586422</td>
+				<td align="right">-77.2290193</td>
+				</tr>
+				<tr>
+				<td align="right">52</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>WASHINGTON</td>
+				<td>DISTRICT OF COLUMBIA</td>
+				<td align="right">20001</td>
+				<td>CAVAN SOLUTIONS INC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">532500</td>
+				<td align="right">38.912068</td>
+				<td align="right">-77.0190228</td>
+				</tr>
+				<tr>
+				<td align="right">53</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>DAYTONA BEACH</td>
+				<td>FLORIDA</td>
+				<td align="right">32114</td>
+				<td>EMBRY-RIDDLE AERONAUTICAL UNIVERSITY INC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">993869.5</td>
+				<td align="right">29.1987957</td>
+				<td align="right">-81.0423429</td>
+				</tr>
+				<tr>
+				<td align="right">54</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>SAN ANTONIO</td>
+				<td>TEXAS</td>
+				<td align="right">78216</td>
+				<td>EVANS CONSOLES INCORPORATED</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">176254.51</td>
+				<td align="right">29.5516834</td>
+				<td align="right">-98.4952228</td>
+				</tr>
+				<tr>
+				<td align="right">59</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>CHEVY CHASE</td>
+				<td>MARYLAND</td>
+				<td align="right">20815</td>
+				<td>AZUL ENGINEERING LLC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">1129411.77</td>
+				<td align="right">38.9875145</td>
+				<td align="right">-77.0737149</td>
+				</tr>
+				<tr>
+				<td align="right">61</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>MARLBOROUGH</td>
+				<td>MASSACHUSETTS</td>
+				<td align="right">1752</td>
+				<td>RAYTHEON COMPANY</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">25764778.44</td>
+				<td align="right">42.347372</td>
+				<td align="right">-71.536786</td>
+				</tr>
+				<tr>
+				<td align="right">65</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>IRVING</td>
+				<td>TEXAS</td>
+				<td align="right">75063</td>
+				<td>PROSCI, INC.</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">33250</td>
+				<td align="right">32.9117167</td>
+				<td align="right">-96.9907197</td>
+				</tr>
+				<tr>
+				<td align="right">66</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>SUNNYVALE</td>
+				<td>CALIFORNIA</td>
+				<td align="right">94085</td>
+				<td>ATAC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">20000</td>
+				<td align="right">37.3895297</td>
+				<td align="right">-122.0183914</td>
+				</tr>
+				<tr>
+				<td align="right">67</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>ARLINGTON</td>
+				<td>VIRGINIA</td>
+				<td align="right">22209</td>
+				<td>ADVANCED MANAGEMENT TECHNOLOGY, INC.</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">10398457.81</td>
+				<td align="right">38.8922092</td>
+				<td align="right">-77.070837</td>
+				</tr>
+				<tr>
+				<td align="right">69</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>NOWATA</td>
+				<td>OKLAHOMA</td>
+				<td align="right">74048</td>
+				<td>DISAN ENGINEERING CORPORATION</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">260768</td>
+				<td align="right">36.6934304</td>
+				<td align="right">-95.6037465</td>
+				</tr>
+				<tr>
+				<td align="right">72</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>CHERRY HILL</td>
+				<td>NEW JERSEY</td>
+				<td align="right">8034</td>
+				<td>GAW ASSOCIATES INC.</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">452528.41</td>
+				<td align="right">39.9021937</td>
+				<td align="right">-74.9968543</td>
+				</tr>
+				<tr>
+				<td align="right">73</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>WASHINGTON</td>
+				<td>DISTRICT OF COLUMBIA</td>
+				<td align="right">20024</td>
+				<td>BELLAMY MANAGEMENT SERVICES, LLC</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">89500</td>
+				<td align="right">38.8761083</td>
+				<td align="right">-77.0190228</td>
+				</tr>
+				<tr>
+				<td align="right">74</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>ANNAPOLIS</td>
+				<td>MARYLAND</td>
+				<td align="right">21401</td>
+				<td>ARINC INCORPORATED</td>
+				<td>Federal Aviation Administration</td>
+				<td align="right">6920</td>
+				<td align="right">63955</td>
+				<td align="right">38.979434</td>
+				<td align="right">-76.4919706</td>
+				</tr>
+				<tr>
+				<td align="right">75</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>CHANTILLY</td>
+				<td>VIRGINIA</td>
+				<td align="right">20151</td>
+				<td>SYSTEMS RESEARCH AND APPLICATIONS CORPORATION</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">23529.93</td>
+				<td align="right">38.9016401</td>
+				<td align="right">-77.4587239</td>
+				</tr>
+				<tr>
+				<td align="right">76</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>ELLICOTT CITY</td>
+				<td>MARYLAND</td>
+				<td align="right">21043</td>
+				<td>CENTER FOR WATERSHED PROTECTION, INC</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">25000</td>
+				<td align="right">39.2369558</td>
+				<td align="right">-76.7913558</td>
+				</tr>
+				<tr>
+				<td align="right">77</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>BELLEVUE</td>
+				<td>WASHINGTON</td>
+				<td align="right">98004</td>
+				<td>DYE MANAGEMENT GROUP, INC</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">44490</td>
+				<td align="right">47.6264794</td>
+				<td align="right">-122.2051487</td>
+				</tr>
+				<tr>
+				<td align="right">78</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>BLUE BELL</td>
+				<td>PENNSYLVANIA</td>
+				<td align="right">19422</td>
+				<td>GREENMAN-PEDERSEN, INC.</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">115393</td>
+				<td align="right">40.1653934</td>
+				<td align="right">-75.2829046</td>
+				</tr>
+				<tr>
+				<td align="right">79</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>CHEVY CHASE</td>
+				<td>MARYLAND</td>
+				<td align="right">20815</td>
+				<td>HIGH STREET CONSULTING GROUP</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">926457</td>
+				<td align="right">38.9875145</td>
+				<td align="right">-77.0737149</td>
+				</tr>
+				<tr>
+				<td align="right">80</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>CHESAPEAKE CITY</td>
+				<td>MARYLAND</td>
+				<td align="right">21915</td>
+				<td>SES GROUP &amp; ASSOCIATES, LLC</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">71746.71</td>
+				<td align="right">39.510346</td>
+				<td align="right">-75.841775</td>
+				</tr>
+				<tr>
+				<td align="right">82</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>URBANA</td>
+				<td>ILLINOIS</td>
+				<td align="right">61801</td>
+				<td>APPLIED PAVEMENT TECHNOLOGY, INC</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">467667</td>
+				<td align="right">40.1059233</td>
+				<td align="right">-88.2120315</td>
+				</tr>
+				<tr>
+				<td align="right">83</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>WASHINGTON</td>
+				<td>DISTRICT OF COLUMBIA</td>
+				<td align="right">20003</td>
+				<td>PARSONS BRINCKERHOFF INC</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">144196</td>
+				<td align="right">38.8831372</td>
+				<td align="right">-76.9902276</td>
+				</tr>
+				<tr>
+				<td align="right">84</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>NEW YORK</td>
+				<td>NEW YORK</td>
+				<td align="right">10119</td>
+				<td>PARSONS BRINCKERHOFF INC</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">416879</td>
+				<td align="right">40.7502013</td>
+				<td align="right">-73.9931036</td>
+				</tr>
+				<tr>
+				<td align="right">85</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>PITTSBURGH</td>
+				<td>PENNSYLVANIA</td>
+				<td align="right">15222</td>
+				<td>HDR ENGINEERING, INC.</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">192369.98</td>
+				<td align="right">40.4475255</td>
+				<td align="right">-79.9933976</td>
+				</tr>
+				<tr>
+				<td align="right">86</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>MC LEAN</td>
+				<td>VIRGINIA</td>
+				<td align="right">22101</td>
+				<td>NATIONAL ACADEMY OF SCIENCES</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">502612</td>
+				<td align="right">38.9339378</td>
+				<td align="right">-77.177324</td>
+				</tr>
+				<tr>
+				<td align="right">87</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>MADISON</td>
+				<td>WISCONSIN</td>
+				<td align="right">53717</td>
+				<td>KONICA MINOLTA BUSINESS SOLUTIONS U.S.A., INC.</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">2676</td>
+				<td align="right">43.0718858</td>
+				<td align="right">-89.5167298</td>
+				</tr>
+				<tr>
+				<td align="right">88</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>MONTPELIER</td>
+				<td>VERMONT</td>
+				<td align="right">5602</td>
+				<td>XEROX CORPORATION</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">4260</td>
+				<td align="right">44.2809273</td>
+				<td align="right">-72.6195076</td>
+				</tr>
+				<tr>
+				<td align="right">89</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>NEW BRUNSWICK</td>
+				<td>NEW JERSEY</td>
+				<td align="right">8901</td>
+				<td>RUTGERS, THE STATE UNIVERSITY OF NEW JERSEY</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">500000</td>
+				<td align="right">40.4861552</td>
+				<td align="right">-74.45185</td>
+				</tr>
+				<tr>
+				<td align="right">90</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>KEARNEYSVILLE</td>
+				<td>WEST VIRGINIA</td>
+				<td align="right">25430</td>
+				<td>ADVANCED ASPHALT TECHNOLOGIES L.L.C.</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">218086.44</td>
+				<td align="right">39.3426674</td>
+				<td align="right">-77.939597</td>
+				</tr>
+				<tr>
+				<td align="right">91</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>MC LEAN</td>
+				<td>VIRGINIA</td>
+				<td align="right">22101</td>
+				<td>ENGINEERING &amp; SOFTWARE CONSULTANTS, INC.</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">784136.92</td>
+				<td align="right">38.9339378</td>
+				<td align="right">-77.177324</td>
+				</tr>
+				<tr>
+				<td align="right">92</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>WALTHAM</td>
+				<td>MASSACHUSETTS</td>
+				<td align="right">2451</td>
+				<td>CADMUS GROUP, INC., THE</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">25000</td>
+				<td align="right">42.3971065</td>
+				<td align="right">-71.2598997</td>
+				</tr>
+				<tr>
+				<td align="right">93</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>CAMBRIDGE</td>
+				<td>MASSACHUSETTS</td>
+				<td align="right">2140</td>
+				<td>CAMBRIDGE SYSTEMATICS, INC.</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">0</td>
+				<td align="right">42.3964457</td>
+				<td align="right">-71.1359393</td>
+				</tr>
+				<tr>
+				<td align="right">94</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>SILVER SPRING</td>
+				<td>MARYLAND</td>
+				<td align="right">20910</td>
+				<td>HDR ENGINEERING, INC.</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">25000</td>
+				<td align="right">39.0041504</td>
+				<td align="right">-77.0391754</td>
+				</tr>
+				<tr>
+				<td align="right">95</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>FAIRFAX</td>
+				<td>VIRGINIA</td>
+				<td align="right">22031</td>
+				<td>ICF INCORPORATED, L.L.C.</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">25000</td>
+				<td align="right">38.864187</td>
+				<td align="right">-77.2577571</td>
+				</tr>
+				<tr>
+				<td align="right">96</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>CHANTILLY</td>
+				<td>VIRGINIA</td>
+				<td align="right">20151</td>
+				<td>ENGINEERING &amp; SOFTWARE CONSULTANTS, INC.</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">990304.78</td>
+				<td align="right">38.9016401</td>
+				<td align="right">-77.4587239</td>
+				</tr>
+				<tr>
+				<td align="right">97</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>WASHINGTON</td>
+				<td>DISTRICT OF COLUMBIA</td>
+				<td align="right">20001</td>
+				<td>AMERICAN ASSOCIATION OF STATE HIGHWAY AND TRANSPORTATION OFF</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">571585.25</td>
+				<td align="right">38.912068</td>
+				<td align="right">-77.0190228</td>
+				</tr>
+				<tr>
+				<td align="right">98</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>CHAMPAIGN</td>
+				<td>ILLINOIS</td>
+				<td align="right">61820</td>
+				<td>RAO RESEARCH AND CONSULTING, LLC</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">258196</td>
+				<td align="right">40.1166102</td>
+				<td align="right">-88.2412504</td>
+				</tr>
+				<tr>
+				<td align="right">99</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>PITTSBURGH</td>
+				<td>PENNSYLVANIA</td>
+				<td align="right">15222</td>
+				<td>HDR ENGINEERING, INC.</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">50000</td>
+				<td align="right">40.4475255</td>
+				<td align="right">-79.9933976</td>
+				</tr>
+				<tr>
+				<td align="right">100</td>
+				<td>Department of Transportation</td>
+				<td>contract</td>
+				<td>CHESAPEAKE CITY</td>
+				<td>MARYLAND</td>
+				<td align="right">21915</td>
+				<td>SES GROUP &amp; ASSOCIATES, LLC</td>
+				<td>Federal Highway Administration</td>
+				<td align="right">6925</td>
+				<td align="right">188453.62</td>
+				<td align="right">39.510346</td>
+				<td align="right">-75.841775</td>
+				</tr>
+			</tbody>
+			</table>
 		</div>
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-		  <ul class="nav navbar-nav navbar-right">
-			<li class="nav-item dropdown">
-			  <a href="index.html" class="nav-link dropdown-toggle" data-toggle="dropdown" id="Preview" role="button" aria-haspopup="true" aria-expanded="false">
-				  <font color="#1F1E1E">Spending Views</font> <span class="caret"></span></a>
-			  <ul class="dropdown-menu">
-				  <li><a class="dropdown-item" href="byState.html">By State</a></li>
-				  <li><a class="dropdown-item" href="byAgency.html">By Agency/Dept</a></li>
-				  <li><a class="dropdown-item" href="byCategory.html">By Category</a></li>
-			  </ul>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="spending_data.html"><font color="#1F1E1E">Data</font></a>
-			</li>
-		  </ul>
-		</div>
-	  </div>
-    </nav>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <p><b>Data Sample</b> (limited to 100 rows)</p>
-				<a href="spending_data.html"></a>
-				<table class="table table-bordered table-hover table-condensed">
-					<thead bgcolor="#C0C0C0"><tr><th title="Field #1"></th>
-					<th title="Field #2">Awarding_Agency</th>
-					<th title="Field #3">Category</th>
-					<th title="Field #4">POP_City</th>
-					<th title="Field #5">POP_State</th>
-					<th title="Field #6">POP_Zip</th>
-					<th title="Field #7">Recipient_Name</th>
-					<th title="Field #8">Subtier_Agency</th>
-					<th title="Field #9">Subtier_Code</th>
-					<th title="Field #10">Total_Obligation</th>
-					<th title="Field #11">Latitude</th>
-					<th title="Field #12">Longitude</th>
-					</tr></thead>
-					<tbody><tr>
-					<td align="right">1</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>BALTIMORE</td>
-					<td>MARYLAND</td>
-					<td align="right">21230</td>
-					<td>MARYLAND MARITIME INC</td>
-					<td>Maritime Administration</td>
-					<td align="right">6938</td>
-					<td align="right">520169</td>
-					<td align="right">39.2635174</td>
-					<td align="right">-76.6239423</td>
-					</tr>
-					<tr>
-					<td align="right">2</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>BALTIMORE</td>
-					<td>MARYLAND</td>
-					<td align="right">21230</td>
-					<td>MARYLAND MARITIME INC</td>
-					<td>Maritime Administration</td>
-					<td align="right">6938</td>
-					<td align="right">662420</td>
-					<td align="right">39.2635174</td>
-					<td align="right">-76.6239423</td>
-					</tr>
-					<tr>
-					<td align="right">3</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>ORLANDO</td>
-					<td>FLORIDA</td>
-					<td align="right">32822</td>
-					<td>SIMCOM INTERNATIONAL, INC.</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">39520</td>
-					<td align="right">28.4750405</td>
-					<td align="right">-81.2849169</td>
-					</tr>
-					<tr>
-					<td align="right">4</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>MOJAVE</td>
-					<td>CALIFORNIA</td>
-					<td align="right">93501</td>
-					<td>NATIONAL TEST PILOT SCHOOL INC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">29950</td>
-					<td align="right">35.04403</td>
-					<td align="right">-118.2526623</td>
-					</tr>
-					<tr>
-					<td align="right">5</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>FLUSHING</td>
-					<td>NEW YORK</td>
-					<td align="right">11371</td>
-					<td>FLIGHTSAFETY INTERNATIONAL INC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">59200</td>
-					<td align="right">40.7766392</td>
-					<td align="right">-73.87425</td>
-					</tr>
-					<tr>
-					<td align="right">7</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>SAINT PETERSBURG</td>
-					<td>FLORIDA</td>
-					<td align="right">33710</td>
-					<td>SENSOR SYSTEMS, L.L.C.</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">211847</td>
-					<td align="right">27.791959</td>
-					<td align="right">-82.723924</td>
-					</tr>
-					<tr>
-					<td align="right">8</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>OKLAHOMA CITY</td>
-					<td>OKLAHOMA</td>
-					<td align="right">73169</td>
-					<td>ONESIMUS DEFENSE LLC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">13989</td>
-					<td align="right">35.378708</td>
-					<td align="right">-97.6439611</td>
-					</tr>
-					<tr>
-					<td align="right">10</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>TUSTIN</td>
-					<td>CALIFORNIA</td>
-					<td align="right">92780</td>
-					<td>PVP ADVANCED EO SYSTEMS, INC.</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">106500</td>
-					<td align="right">33.7372177</td>
-					<td align="right">-117.8135579</td>
-					</tr>
-					<tr>
-					<td align="right">11</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>OKLAHOMA CITY</td>
-					<td>OKLAHOMA</td>
-					<td align="right">73169</td>
-					<td>RIGIL CORPORATION</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">605377.86</td>
-					<td align="right">35.378708</td>
-					<td align="right">-97.6439611</td>
-					</tr>
-					<tr>
-					<td align="right">12</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>COLORADO SPRINGS</td>
-					<td>COLORADO</td>
-					<td align="right">80916</td>
-					<td>RAMPART AVIATION, LLC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">15830</td>
-					<td align="right">38.8021891</td>
-					<td align="right">-104.7229279</td>
-					</tr>
-					<tr>
-					<td align="right">13</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>FLUSHING</td>
-					<td>NEW YORK</td>
-					<td align="right">11371</td>
-					<td>FLIGHTSAFETY INTERNATIONAL INC.</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">196080</td>
-					<td align="right">40.7766392</td>
-					<td align="right">-73.87425</td>
-					</tr>
-					<tr>
-					<td align="right">14</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>PRESCOTT</td>
-					<td>ARIZONA</td>
-					<td align="right">86301</td>
-					<td>GUIDANCE ACADEMY, LLC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">13675.12</td>
-					<td align="right">34.5659245</td>
-					<td align="right">-112.4649083</td>
-					</tr>
-					<tr>
-					<td align="right">15</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>OKLAHOMA CITY</td>
-					<td>OKLAHOMA</td>
-					<td align="right">73169</td>
-					<td>MA TECH SERVICES INC.</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">68160</td>
-					<td align="right">35.378708</td>
-					<td align="right">-97.6439611</td>
-					</tr>
-					<tr>
-					<td align="right">16</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>NORMAN</td>
-					<td>OKLAHOMA</td>
-					<td align="right">73071</td>
-					<td>CNI GLOBAL SOLUTIONS, LLC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">2673732.36</td>
-					<td align="right">35.2407401</td>
-					<td align="right">-97.4056928</td>
-					</tr>
-					<tr>
-					<td align="right">17</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>OKLAHOMA CITY</td>
-					<td>OKLAHOMA</td>
-					<td align="right">73169</td>
-					<td>ATLANTIC FABRICATION AND DESIGN, LLC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">0</td>
-					<td align="right">35.378708</td>
-					<td align="right">-97.6439611</td>
-					</tr>
-					<tr>
-					<td align="right">18</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>OKLAHOMA CITY</td>
-					<td>OKLAHOMA</td>
-					<td align="right">73169</td>
-					<td>METROPOLITAN AIR CONDITIONING SERVICE CO (INC)</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">477978</td>
-					<td align="right">35.378708</td>
-					<td align="right">-97.6439611</td>
-					</tr>
-					<tr>
-					<td align="right">19</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>NICHOLS HILLS</td>
-					<td>OKLAHOMA</td>
-					<td align="right">73116</td>
-					<td>DISCOVERSOFT DEVELOPMENT, LLC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">68000</td>
-					<td align="right">35.5424793</td>
-					<td align="right">-97.5518056</td>
-					</tr>
-					<tr>
-					<td align="right">20</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>FLUSHING</td>
-					<td>NEW YORK</td>
-					<td align="right">11371</td>
-					<td>FLIGHTSAFETY INTERNATIONAL INC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">37000</td>
-					<td align="right">40.7766392</td>
-					<td align="right">-73.87425</td>
-					</tr>
-					<tr>
-					<td align="right">21</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>OKLAHOMA CITY</td>
-					<td>OKLAHOMA</td>
-					<td align="right">73104</td>
-					<td>OKLAHOMA MEDICAL RESEARCH FOUNDATION</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">3672</td>
-					<td align="right">35.4718556</td>
-					<td align="right">-97.5057737</td>
-					</tr>
-					<tr>
-					<td align="right">22</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>OKLAHOMA CITY</td>
-					<td>OKLAHOMA</td>
-					<td align="right">73169</td>
-					<td>SOUTHWEST SOLUTIONS GROUP, INC.</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">4527.95</td>
-					<td align="right">35.378708</td>
-					<td align="right">-97.6439611</td>
-					</tr>
-					<tr>
-					<td align="right">23</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>OKLAHOMA CITY</td>
-					<td>OKLAHOMA</td>
-					<td align="right">73169</td>
-					<td>DALE ROGERS TRAINING CENTER, INC.</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">1704732.69</td>
-					<td align="right">35.378708</td>
-					<td align="right">-97.6439611</td>
-					</tr>
-					<tr>
-					<td align="right">24</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>BOISE</td>
-					<td>IDAHO</td>
-					<td align="right">83705</td>
-					<td>AVIATION SPECIALTIES UNLIMITED, INC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">12770</td>
-					<td align="right">43.5698551</td>
-					<td align="right">-116.2249298</td>
-					</tr>
-					<tr>
-					<td align="right">25</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>THE COLONY</td>
-					<td>TEXAS</td>
-					<td align="right">75056</td>
-					<td>SOUTHWEST SOLUTIONS GROUP, INC.</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">5630.01</td>
-					<td align="right">33.0787106</td>
-					<td align="right">-96.9101806</td>
-					</tr>
-					<tr>
-					<td align="right">26</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>LOUISVILLE</td>
-					<td>COLORADO</td>
-					<td align="right">80027</td>
-					<td>VAISALA INC.</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">612708</td>
-					<td align="right">39.9434473</td>
-					<td align="right">-105.1843801</td>
-					</tr>
-					<tr>
-					<td align="right">27</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>FLUSHING</td>
-					<td>NEW YORK</td>
-					<td align="right">11371</td>
-					<td>FLIGHTSAFETY INTERNATIONAL INC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">15222</td>
-					<td align="right">40.7766392</td>
-					<td align="right">-73.87425</td>
-					</tr>
-					<tr>
-					<td align="right">28</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>OVERLAND PARK</td>
-					<td>KANSAS</td>
-					<td align="right">66214</td>
-					<td>SELEX ES INC.</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">77471.16</td>
-					<td align="right">38.9709751</td>
-					<td align="right">-94.7122337</td>
-					</tr>
-					<tr>
-					<td align="right">29</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>OKLAHOMA CITY</td>
-					<td>OKLAHOMA</td>
-					<td align="right">73169</td>
-					<td>IMMUNALYSIS CORP</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">12300</td>
-					<td align="right">35.378708</td>
-					<td align="right">-97.6439611</td>
-					</tr>
-					<tr>
-					<td align="right">30</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>HURRICANE</td>
-					<td>UTAH</td>
-					<td align="right">84737</td>
-					<td>DB SYSTEMS, INC.</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">165117.6</td>
-					<td align="right">37.088313</td>
-					<td align="right">-113.2394452</td>
-					</tr>
-					<tr>
-					<td align="right">31</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>OKLAHOMA CITY</td>
-					<td>OKLAHOMA</td>
-					<td align="right">73169</td>
-					<td>ABBOTT LABORATORIES</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">16089</td>
-					<td align="right">35.378708</td>
-					<td align="right">-97.6439611</td>
-					</tr>
-					<tr>
-					<td align="right">32</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>RANCHO CUCAMONGA</td>
-					<td>CALIFORNIA</td>
-					<td align="right">91730</td>
-					<td>GENERAL MICRO SYSTEMS, INC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">353403</td>
-					<td align="right">34.0965313</td>
-					<td align="right">-117.5848025</td>
-					</tr>
-					<tr>
-					<td align="right">33</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>ORCHARD PARK</td>
-					<td>NEW YORK</td>
-					<td align="right">14127</td>
-					<td>ACCIPITER RADAR CORPORATION</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">68400</td>
-					<td align="right">42.7576584</td>
-					<td align="right">-78.7702895</td>
-					</tr>
-					<tr>
-					<td align="right">34</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>CARSON</td>
-					<td>CALIFORNIA</td>
-					<td align="right">90745</td>
-					<td>DUCOMMUN LABARGE TECHNOLOGIES, INC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">275300.69</td>
-					<td align="right">33.8232001</td>
-					<td align="right">-118.2585096</td>
-					</tr>
-					<tr>
-					<td align="right">35</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>FARMINGDALE</td>
-					<td>NEW YORK</td>
-					<td align="right">11735</td>
-					<td>TELEPHONICS CORPORATION</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">72102.72</td>
-					<td align="right">40.7245083</td>
-					<td align="right">-73.4298073</td>
-					</tr>
-					<tr>
-					<td align="right">36</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>PALO ALTO</td>
-					<td>CALIFORNIA</td>
-					<td align="right">94304</td>
-					<td>COMMUNICATIONS &amp; POWER INDUSTRIES LLC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">506999</td>
-					<td align="right">37.3813444</td>
-					<td align="right">-122.1802812</td>
-					</tr>
-					<tr>
-					<td align="right">37</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>OKLAHOMA CITY</td>
-					<td>OKLAHOMA</td>
-					<td align="right">73108</td>
-					<td>SURFACE MOUNT DEPOT, INC.</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">361175</td>
-					<td align="right">35.4495749</td>
-					<td align="right">-97.5572231</td>
-					</tr>
-					<tr>
-					<td align="right">39</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>GWINN</td>
-					<td>MICHIGAN</td>
-					<td align="right">49841</td>
-					<td>CMP COMMERCIAL CONSTRUCTION, INC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">221339.54</td>
-					<td align="right">46.2195586</td>
-					<td align="right">-87.4714881</td>
-					</tr>
-					<tr>
-					<td align="right">40</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>KINGSVILLE</td>
-					<td>TEXAS</td>
-					<td align="right">78363</td>
-					<td>CMP COMMERCIAL CONSTRUCTION, INC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">142837</td>
-					<td align="right">27.4456818</td>
-					<td align="right">-97.8503951</td>
-					</tr>
-					<tr>
-					<td align="right">42</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>GWINN</td>
-					<td>MICHIGAN</td>
-					<td align="right">49841</td>
-					<td>SWAGER COMMUNICATIONS, INC.</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">569200</td>
-					<td align="right">46.2195586</td>
-					<td align="right">-87.4714881</td>
-					</tr>
-					<tr>
-					<td align="right">43</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>LINCOLN</td>
-					<td>NEBRASKA</td>
-					<td align="right">68524</td>
-					<td>VAZQUEZ COMMERCIAL CONTRACTING, LLC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">20225</td>
-					<td align="right">40.8692304</td>
-					<td align="right">-96.8029489</td>
-					</tr>
-					<tr>
-					<td align="right">47</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>LEESBURG</td>
-					<td>VIRGINIA</td>
-					<td align="right">20175</td>
-					<td>AV ED FLIGHT SCHOOL INC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">121180</td>
-					<td align="right">39.0488574</td>
-					<td align="right">-77.5848665</td>
-					</tr>
-					<tr>
-					<td align="right">48</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>HERNDON</td>
-					<td>VIRGINIA</td>
-					<td align="right">20171</td>
-					<td>KARSUN SOLUTIONS LLC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">1462639.4</td>
-					<td align="right">38.9146972</td>
-					<td align="right">-77.3898602</td>
-					</tr>
-					<tr>
-					<td align="right">49</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>WINDSOR</td>
-					<td>CONNECTICUT</td>
-					<td align="right">6095</td>
-					<td>TRC ENVIRONMENTAL CORPORATION</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">37549.68</td>
-					<td align="right">41.8785329</td>
-					<td align="right">-72.6742455</td>
-					</tr>
-					<tr>
-					<td align="right">51</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>MCLEAN</td>
-					<td>VIRGINIA</td>
-					<td align="right">22102</td>
-					<td>RIVA SOLUTIONS, INC.</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">137989.82</td>
-					<td align="right">38.9586422</td>
-					<td align="right">-77.2290193</td>
-					</tr>
-					<tr>
-					<td align="right">52</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>WASHINGTON</td>
-					<td>DISTRICT OF COLUMBIA</td>
-					<td align="right">20001</td>
-					<td>CAVAN SOLUTIONS INC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">532500</td>
-					<td align="right">38.912068</td>
-					<td align="right">-77.0190228</td>
-					</tr>
-					<tr>
-					<td align="right">53</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>DAYTONA BEACH</td>
-					<td>FLORIDA</td>
-					<td align="right">32114</td>
-					<td>EMBRY-RIDDLE AERONAUTICAL UNIVERSITY INC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">993869.5</td>
-					<td align="right">29.1987957</td>
-					<td align="right">-81.0423429</td>
-					</tr>
-					<tr>
-					<td align="right">54</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>SAN ANTONIO</td>
-					<td>TEXAS</td>
-					<td align="right">78216</td>
-					<td>EVANS CONSOLES INCORPORATED</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">176254.51</td>
-					<td align="right">29.5516834</td>
-					<td align="right">-98.4952228</td>
-					</tr>
-					<tr>
-					<td align="right">59</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>CHEVY CHASE</td>
-					<td>MARYLAND</td>
-					<td align="right">20815</td>
-					<td>AZUL ENGINEERING LLC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">1129411.77</td>
-					<td align="right">38.9875145</td>
-					<td align="right">-77.0737149</td>
-					</tr>
-					<tr>
-					<td align="right">61</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>MARLBOROUGH</td>
-					<td>MASSACHUSETTS</td>
-					<td align="right">1752</td>
-					<td>RAYTHEON COMPANY</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">25764778.44</td>
-					<td align="right">42.347372</td>
-					<td align="right">-71.536786</td>
-					</tr>
-					<tr>
-					<td align="right">65</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>IRVING</td>
-					<td>TEXAS</td>
-					<td align="right">75063</td>
-					<td>PROSCI, INC.</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">33250</td>
-					<td align="right">32.9117167</td>
-					<td align="right">-96.9907197</td>
-					</tr>
-					<tr>
-					<td align="right">66</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>SUNNYVALE</td>
-					<td>CALIFORNIA</td>
-					<td align="right">94085</td>
-					<td>ATAC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">20000</td>
-					<td align="right">37.3895297</td>
-					<td align="right">-122.0183914</td>
-					</tr>
-					<tr>
-					<td align="right">67</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>ARLINGTON</td>
-					<td>VIRGINIA</td>
-					<td align="right">22209</td>
-					<td>ADVANCED MANAGEMENT TECHNOLOGY, INC.</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">10398457.81</td>
-					<td align="right">38.8922092</td>
-					<td align="right">-77.070837</td>
-					</tr>
-					<tr>
-					<td align="right">69</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>NOWATA</td>
-					<td>OKLAHOMA</td>
-					<td align="right">74048</td>
-					<td>DISAN ENGINEERING CORPORATION</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">260768</td>
-					<td align="right">36.6934304</td>
-					<td align="right">-95.6037465</td>
-					</tr>
-					<tr>
-					<td align="right">72</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>CHERRY HILL</td>
-					<td>NEW JERSEY</td>
-					<td align="right">8034</td>
-					<td>GAW ASSOCIATES INC.</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">452528.41</td>
-					<td align="right">39.9021937</td>
-					<td align="right">-74.9968543</td>
-					</tr>
-					<tr>
-					<td align="right">73</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>WASHINGTON</td>
-					<td>DISTRICT OF COLUMBIA</td>
-					<td align="right">20024</td>
-					<td>BELLAMY MANAGEMENT SERVICES, LLC</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">89500</td>
-					<td align="right">38.8761083</td>
-					<td align="right">-77.0190228</td>
-					</tr>
-					<tr>
-					<td align="right">74</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>ANNAPOLIS</td>
-					<td>MARYLAND</td>
-					<td align="right">21401</td>
-					<td>ARINC INCORPORATED</td>
-					<td>Federal Aviation Administration</td>
-					<td align="right">6920</td>
-					<td align="right">63955</td>
-					<td align="right">38.979434</td>
-					<td align="right">-76.4919706</td>
-					</tr>
-					<tr>
-					<td align="right">75</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>CHANTILLY</td>
-					<td>VIRGINIA</td>
-					<td align="right">20151</td>
-					<td>SYSTEMS RESEARCH AND APPLICATIONS CORPORATION</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">23529.93</td>
-					<td align="right">38.9016401</td>
-					<td align="right">-77.4587239</td>
-					</tr>
-					<tr>
-					<td align="right">76</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>ELLICOTT CITY</td>
-					<td>MARYLAND</td>
-					<td align="right">21043</td>
-					<td>CENTER FOR WATERSHED PROTECTION, INC</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">25000</td>
-					<td align="right">39.2369558</td>
-					<td align="right">-76.7913558</td>
-					</tr>
-					<tr>
-					<td align="right">77</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>BELLEVUE</td>
-					<td>WASHINGTON</td>
-					<td align="right">98004</td>
-					<td>DYE MANAGEMENT GROUP, INC</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">44490</td>
-					<td align="right">47.6264794</td>
-					<td align="right">-122.2051487</td>
-					</tr>
-					<tr>
-					<td align="right">78</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>BLUE BELL</td>
-					<td>PENNSYLVANIA</td>
-					<td align="right">19422</td>
-					<td>GREENMAN-PEDERSEN, INC.</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">115393</td>
-					<td align="right">40.1653934</td>
-					<td align="right">-75.2829046</td>
-					</tr>
-					<tr>
-					<td align="right">79</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>CHEVY CHASE</td>
-					<td>MARYLAND</td>
-					<td align="right">20815</td>
-					<td>HIGH STREET CONSULTING GROUP</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">926457</td>
-					<td align="right">38.9875145</td>
-					<td align="right">-77.0737149</td>
-					</tr>
-					<tr>
-					<td align="right">80</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>CHESAPEAKE CITY</td>
-					<td>MARYLAND</td>
-					<td align="right">21915</td>
-					<td>SES GROUP &amp; ASSOCIATES, LLC</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">71746.71</td>
-					<td align="right">39.510346</td>
-					<td align="right">-75.841775</td>
-					</tr>
-					<tr>
-					<td align="right">82</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>URBANA</td>
-					<td>ILLINOIS</td>
-					<td align="right">61801</td>
-					<td>APPLIED PAVEMENT TECHNOLOGY, INC</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">467667</td>
-					<td align="right">40.1059233</td>
-					<td align="right">-88.2120315</td>
-					</tr>
-					<tr>
-					<td align="right">83</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>WASHINGTON</td>
-					<td>DISTRICT OF COLUMBIA</td>
-					<td align="right">20003</td>
-					<td>PARSONS BRINCKERHOFF INC</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">144196</td>
-					<td align="right">38.8831372</td>
-					<td align="right">-76.9902276</td>
-					</tr>
-					<tr>
-					<td align="right">84</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>NEW YORK</td>
-					<td>NEW YORK</td>
-					<td align="right">10119</td>
-					<td>PARSONS BRINCKERHOFF INC</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">416879</td>
-					<td align="right">40.7502013</td>
-					<td align="right">-73.9931036</td>
-					</tr>
-					<tr>
-					<td align="right">85</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>PITTSBURGH</td>
-					<td>PENNSYLVANIA</td>
-					<td align="right">15222</td>
-					<td>HDR ENGINEERING, INC.</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">192369.98</td>
-					<td align="right">40.4475255</td>
-					<td align="right">-79.9933976</td>
-					</tr>
-					<tr>
-					<td align="right">86</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>MC LEAN</td>
-					<td>VIRGINIA</td>
-					<td align="right">22101</td>
-					<td>NATIONAL ACADEMY OF SCIENCES</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">502612</td>
-					<td align="right">38.9339378</td>
-					<td align="right">-77.177324</td>
-					</tr>
-					<tr>
-					<td align="right">87</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>MADISON</td>
-					<td>WISCONSIN</td>
-					<td align="right">53717</td>
-					<td>KONICA MINOLTA BUSINESS SOLUTIONS U.S.A., INC.</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">2676</td>
-					<td align="right">43.0718858</td>
-					<td align="right">-89.5167298</td>
-					</tr>
-					<tr>
-					<td align="right">88</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>MONTPELIER</td>
-					<td>VERMONT</td>
-					<td align="right">5602</td>
-					<td>XEROX CORPORATION</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">4260</td>
-					<td align="right">44.2809273</td>
-					<td align="right">-72.6195076</td>
-					</tr>
-					<tr>
-					<td align="right">89</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>NEW BRUNSWICK</td>
-					<td>NEW JERSEY</td>
-					<td align="right">8901</td>
-					<td>RUTGERS, THE STATE UNIVERSITY OF NEW JERSEY</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">500000</td>
-					<td align="right">40.4861552</td>
-					<td align="right">-74.45185</td>
-					</tr>
-					<tr>
-					<td align="right">90</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>KEARNEYSVILLE</td>
-					<td>WEST VIRGINIA</td>
-					<td align="right">25430</td>
-					<td>ADVANCED ASPHALT TECHNOLOGIES L.L.C.</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">218086.44</td>
-					<td align="right">39.3426674</td>
-					<td align="right">-77.939597</td>
-					</tr>
-					<tr>
-					<td align="right">91</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>MC LEAN</td>
-					<td>VIRGINIA</td>
-					<td align="right">22101</td>
-					<td>ENGINEERING &amp; SOFTWARE CONSULTANTS, INC.</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">784136.92</td>
-					<td align="right">38.9339378</td>
-					<td align="right">-77.177324</td>
-					</tr>
-					<tr>
-					<td align="right">92</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>WALTHAM</td>
-					<td>MASSACHUSETTS</td>
-					<td align="right">2451</td>
-					<td>CADMUS GROUP, INC., THE</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">25000</td>
-					<td align="right">42.3971065</td>
-					<td align="right">-71.2598997</td>
-					</tr>
-					<tr>
-					<td align="right">93</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>CAMBRIDGE</td>
-					<td>MASSACHUSETTS</td>
-					<td align="right">2140</td>
-					<td>CAMBRIDGE SYSTEMATICS, INC.</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">0</td>
-					<td align="right">42.3964457</td>
-					<td align="right">-71.1359393</td>
-					</tr>
-					<tr>
-					<td align="right">94</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>SILVER SPRING</td>
-					<td>MARYLAND</td>
-					<td align="right">20910</td>
-					<td>HDR ENGINEERING, INC.</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">25000</td>
-					<td align="right">39.0041504</td>
-					<td align="right">-77.0391754</td>
-					</tr>
-					<tr>
-					<td align="right">95</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>FAIRFAX</td>
-					<td>VIRGINIA</td>
-					<td align="right">22031</td>
-					<td>ICF INCORPORATED, L.L.C.</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">25000</td>
-					<td align="right">38.864187</td>
-					<td align="right">-77.2577571</td>
-					</tr>
-					<tr>
-					<td align="right">96</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>CHANTILLY</td>
-					<td>VIRGINIA</td>
-					<td align="right">20151</td>
-					<td>ENGINEERING &amp; SOFTWARE CONSULTANTS, INC.</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">990304.78</td>
-					<td align="right">38.9016401</td>
-					<td align="right">-77.4587239</td>
-					</tr>
-					<tr>
-					<td align="right">97</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>WASHINGTON</td>
-					<td>DISTRICT OF COLUMBIA</td>
-					<td align="right">20001</td>
-					<td>AMERICAN ASSOCIATION OF STATE HIGHWAY AND TRANSPORTATION OFF</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">571585.25</td>
-					<td align="right">38.912068</td>
-					<td align="right">-77.0190228</td>
-					</tr>
-					<tr>
-					<td align="right">98</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>CHAMPAIGN</td>
-					<td>ILLINOIS</td>
-					<td align="right">61820</td>
-					<td>RAO RESEARCH AND CONSULTING, LLC</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">258196</td>
-					<td align="right">40.1166102</td>
-					<td align="right">-88.2412504</td>
-					</tr>
-					<tr>
-					<td align="right">99</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>PITTSBURGH</td>
-					<td>PENNSYLVANIA</td>
-					<td align="right">15222</td>
-					<td>HDR ENGINEERING, INC.</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">50000</td>
-					<td align="right">40.4475255</td>
-					<td align="right">-79.9933976</td>
-					</tr>
-					<tr>
-					<td align="right">100</td>
-					<td>Department of Transportation</td>
-					<td>contract</td>
-					<td>CHESAPEAKE CITY</td>
-					<td>MARYLAND</td>
-					<td align="right">21915</td>
-					<td>SES GROUP &amp; ASSOCIATES, LLC</td>
-					<td>Federal Highway Administration</td>
-					<td align="right">6925</td>
-					<td align="right">188453.62</td>
-					<td align="right">39.510346</td>
-					<td align="right">-75.841775</td>
-					</tr>
-				</tbody>
-				</table>
-            </div>
-        </div>
-    </div>
-
-</body>
-</html>
+	</div>
+</div>
+{% endblock %}

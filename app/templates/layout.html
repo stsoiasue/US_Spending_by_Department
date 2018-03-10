@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>USA Spending</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- Bootstrap CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/css/mapStyle.css" />
+
+    <!-- d3 JS -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- any map -->
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-base.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/themes/dark_blue.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-exports.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-map.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/geodata/countries/united_states_of_america/united_states_of_america.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+    
+
+    <!-- TEST -->
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-ui.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-circular-gauge.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-table.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.1.0/js/anychart-data-adapter.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdn.anychart.com/playground-css/maps_in_dashboard/sales_by_region/style.css" /> -->
+    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.1.0/css/anychart-ui.min.css" />
+    <link rel="stylesheet" href="https://cdn.anychart.com/releases/8.1.0/fonts/css/anychart-font.min.css" />
+    <!-- TEST -->
+
+    <!-- LEAFLET CSS AND JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+    
+    <!-- LEAFLET-HEAT -->
+    <script type="text/javascript" src="../static/js/leaflet-heat.js"></script>
+
+    <link rel="stylesheet" href="../static/css/style.css" />
+
+</head>
+<body>
+	<nav class="navbar">
+	  <div class="container-fluid">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		  <span class="sr-only">Toggle navigation</span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/"><font color="#FC0505" size="10">USA Spending</font></a>
+		</div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav navbar-right">
+			<li class="nav-item dropdown">
+			  <a href="/" class="nav-link dropdown-toggle" data-toggle="dropdown" id="Preview" role="button" aria-haspopup="true" aria-expanded="false">
+				  <font color="#1F1E1E">Spending Views</font> <span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+				  <li><a class="dropdown-item" href="/top10">Top Ten Contracts By Department</a></li>
+				  <li><a class="dropdown-item" href="/heatmap">Awards Heatmap</a></li>
+				  <li><a class="dropdown-item" href="/about">Our Process</a></li>
+			  </ul>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/spending_data"><font color="#1F1E1E">Data</font></a>
+			</li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

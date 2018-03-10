@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 import os 
 
 # sqlite_db_path = os.path.join('app','non-static','us_data.sqlite')
-sqlite_db_path = os.path.join('non-static','end_of_class.sqlite')
+sqlite_db_path = os.path.join('non-static','data.sqlite')
 
 # Create engine using the `us_data.sqlite` database file
 engine = create_engine(f'sqlite:///{sqlite_db_path}')
@@ -15,8 +15,8 @@ engine = create_engine(f'sqlite:///{sqlite_db_path}')
 Base = declarative_base()
 
 # establish Contracts class
-class Contracts(Base):
-    __tablename__ = 'department_contracts'
+class Contract(Base):
+    __tablename__ = 'lat_lon'
     index = Column(Integer, primary_key=True)
     Awarding_Agency = Column(String(255))
     Subtier_Agency = Column(String(255))
@@ -29,12 +29,12 @@ class Contracts(Base):
     Total_Obligation = Column(String(255))
     Latitude = Column(Float)
     Longitude = Column(Float)
-    # Description = Column(String(255))
-    # Contract_ID = Column(String(255))
+    Description = Column(String(255))
+    Contract_ID = Column(String(255))
 
-# establish Contracts class
+# establish Top class
 class Top(Base):
-    __tablename__ = 'top_contracts'
+    __tablename__ = 'top_ten'
     index = Column(Integer, primary_key=True)
     Awarding_Agency = Column(String(255))
     Subtier_Agency = Column(String(255))
@@ -47,10 +47,10 @@ class Top(Base):
     Total_Obligation = Column(String(255))
     Latitude = Column(Float)
     Longitude = Column(Float)
-    # Description = Column(String(255))
-    # Contract_ID = Column(String(255))
-    # Percentage_of_Dept = Column(Integer)
-    # Percentage_of_Total = Column(Integer)
+    Description = Column(String(255))
+    Contract_ID = Column(String(255))
+#     Percentage_of_Dept = Column(Integer)
+#     Percentage_of_Total = Column(Integer)
 
 # Create a Contracts table within the database
 Base.metadata.create_all(engine)
@@ -59,7 +59,7 @@ Base.metadata.create_all(engine)
 session = Session(bind=engine)
 
 # assign table to Contracts variable
-Contracts = session.query(Contracts)
+Contracts = session.query(Contract)
 
-# assign table to Contracts variable
-# Top = session.query(Contracts).limit(20)
+# assign table to Top variable
+Top_Contracts = session.query(Top)
